@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -16,43 +17,51 @@
       padding: 20px;
     }
 
-    .gallery {
-      display: flex;
+    .gallery-wrapper {
       overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 10px;
+      white-space: nowrap;
       padding: 20px;
     }
 
-    .gallery::-webkit-scrollbar {
-      height: 8px;
-    }
-    .gallery::-webkit-scrollbar-thumb {
-      background: #555;
-      border-radius: 4px;
+    .gallery {
+      display: grid;
+      grid-auto-flow: column; /* 横に並べる */
+      grid-auto-columns: masonry; /* ブラウザによって無視されるが横流しを維持 */
+      grid-template-rows: repeat(3, 200px); /* 高さを一定に揃える（3段） */
+      gap: 0; /* 隙間なし */
     }
 
     .gallery img {
-      width: 250px;
-      height: 180px;
+      width: auto;
+      height: 100%;
       object-fit: cover;
-      /* 角を丸くしない */
-      border-radius: 0;
-      scroll-snap-align: start;
-      flex-shrink: 0;
+      border-radius: 0; /* 四角 */
+      display: block;
+    }
+
+    /* スクロールバーを目立たなくする */
+    .gallery-wrapper::-webkit-scrollbar {
+      height: 8px;
+    }
+    .gallery-wrapper::-webkit-scrollbar-thumb {
+      background: #444;
     }
   </style>
 </head>
 <body>
   <h1>Art Gallery</h1>
-  <div class="gallery">
-    <img src="https://picsum.photos/id/1015/400/300" alt="Art 1">
-    <img src="https://picsum.photos/id/1025/400/300" alt="Art 2">
-    <img src="https://picsum.photos/id/1035/400/300" alt="Art 3">
-    <img src="https://picsum.photos/id/1045/400/300" alt="Art 4">
-    <img src="https://picsum.photos/id/1055/400/300" alt="Art 5">
-    <img src="https://picsum.photos/id/1065/400/300" alt="Art 6">
+  <div class="gallery-wrapper">
+    <div class="gallery">
+      <img src="img/art1.jpg" alt="Art 1">
+      <img src="img/art2.jpg" alt="Art 2">
+      <img src="img/art3.jpg" alt="Art 3">
+      <img src="img/art4.jpg" alt="Art 4">
+      <img src="img/art5.jpg" alt="Art 5">
+      <img src="img/art6.jpg" alt="Art 6">
+      <img src="img/art7.jpg" alt="Art 7">
+      <img src="img/art8.jpg" alt="Art 8">
+      <img src="img/art9.jpg" alt="Art 9">
+    </div>
   </div>
 </body>
 </html>
-
