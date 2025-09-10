@@ -24,87 +24,56 @@
     }
 
     .gallery-container {
-      position: relative;
-      overflow: hidden;
-      padding: 2rem 1rem;
+      padding: 2rem;
     }
 
+    /* ← 横スクロールじゃなく grid に変更 */
     .gallery {
-      display: flex;
-      gap: 1.5rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .gallery::-webkit-scrollbar {
-      display: none; /* スクロールバー非表示 */
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* カードを敷き詰め */
+      gap: 2rem;
     }
 
     .gallery-item {
-      flex: 0 0 auto;
-      width: 300px;
-      height: 400px;
       background: #eee;
       border-radius: 16px;
       overflow: hidden;
-      scroll-snap-align: start;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
       position: relative;
+      width: 100%;
+      height: 800px; /* 今までの約2倍 */
     }
 
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
 
     .caption {
       position: absolute;
-      left: 12px;
-      bottom: 12px;
-      background: rgba(255,255,255,0.7);
-      padding: 4px 8px;
-      border-radius: 6px;
-      font-size: 14px;
+      left: 16px;
+      bottom: 16px;
+      background: rgba(255,255,255,0.8);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
     }
 
-    /* ナビゲーションボタン */
-    .nav-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: white;
-      border: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-    }
-
-    .nav-btn:hover {
-      background: #f0f0f0;
-    }
-
-    .nav-left { left: 10px; }
-    .nav-right { right: 10px; }
+    /* ← 矢印ボタンは不要になるので非表示に */
+    .nav-btn { display: none; }
 
   </style>
 </head>
 <body>
   <header>
-    <h1>Art Gallery</h1>
-    <nav>
-      <a href="#">Explore</a>
-      <a href="#">Collections</a>
-    </nav>
+    <h1>ミューズ</h1>
   </header>
 
   <div class="gallery-container">
-    <button class="nav-btn nav-left">◀</button>
-    <div class="gallery" id="gallery">
+    <div class="gallery">
       <div class="gallery-item">
         <img src="1757402113917.jpg" alt="Untitled">
         <div class="caption">Sora Tomioka — Untitled</div>
@@ -122,24 +91,8 @@
         <div class="caption">Ryotaro — Integration</div>
       </div>
     </div>
-    <button class="nav-btn nav-right">▶</button>
   </div>
-
-  <script>
-    const gallery = document.getElementById('gallery');
-    const leftBtn = document.querySelector('.nav-left');
-    const rightBtn = document.querySelector('.nav-right');
-
-    const scrollAmount = 320; // 画像サイズ + gap に合わせて調整
-
-    leftBtn.addEventListener('click', () => {
-      gallery.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-
-    rightBtn.addEventListener('click', () => {
-      gallery.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-  </script>
 </body>
 </html>
+
 
