@@ -1,178 +1,124 @@
-/* 基本的なスタイルリセットとページ全体のフォント設定 */
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+/* 基本的なスタイルリセット */
+body, html {
     margin: 0;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #fff;
+    color: #1d1d1f;
 }
 
 /* ヘッダー */
 header {
-    background-color: #fff;
-    color: #333;
-    padding: 1rem 2rem;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 1000;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    z-index: 100;
+    padding: 1.5rem 2.5rem;
+    background-color: transparent;
+    border-bottom: none;
+    box-sizing: border-box;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.7); 
 }
 
-header nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-header nav li {
-    display: inline-block;
-    margin-left: 20px;
-}
-
-header nav a {
-    color: #555;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-header nav a:hover {
-    color: #000;
-}
-
-/* メインコンテンツ */
 main {
-    padding-top: 80px; /* ヘッダーの高さ分を確保 */
+    width: 100%;
+    padding-top: 100px;
 }
 
-/* ヒーローセクション */
-.hero {
+/* 横スクロールラッパー */
+.horizontal-scroll-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 75vh;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
     background-color: #fff;
-    padding: 4rem 2rem;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    border-radius: 8px; /* 角を丸くする */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
-.hero-image {
-    flex-basis: 40%;
-    text-align: center; /* 画像を中央揃え */
+.horizontal-scroll-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
-.hero-image img {
+/* 各ギャラリーアイテム（スライド） */
+.gallery-item {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+}
+
+/* 画像コンテナ */
+.image-container {
+    height: 100%;
+    width: 60%; /* ★★★ 幅を60%に戻す ★★★ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 1.25rem; /* ★★★ 右の余白を半分に ★★★ */
+    box-sizing: border-box;
+}
+
+.image-container img {
     max-width: 100%;
-    border-radius: 50%;
-    border: 5px solid #eee; /* 枠線を少し薄く */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease-in-out; /* ホバーエフェクト */
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
 }
 
-.hero-image img:hover {
-    transform: scale(1.02); /* 少し拡大 */
+/* 情報コンテナ */
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%; /* ★★★ 幅を40%に戻す ★★★ */
+    padding: 2rem 4rem 2rem 2rem; /* ★★★ 左の余白を半分に ★★★ */
+    box-sizing: border-box;
+    text-align: center;
 }
 
-.hero-text {
-    flex-basis: 60%;
+.info-container h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #111;
 }
 
-.hero-text h2 {
-    font-size: 2.5rem;
-    margin-top: 0;
-    color: #222;
-}
-
-.hero-text p {
+.info-container p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.7;
     color: #555;
 }
 
-
-/* 作品ギャラリー */
-#gallery {
-    padding: 2rem;
-    max-width: 1200px;
+/* コンテンツエリア */
+.content-area {
+    padding: 0rem 2.5rem;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-#gallery h2 {
+.content-area p {
+    font-size: 1.2rem;
+    color: #8b8b8b;
     text-align: center;
-    font-size: 2.5rem; /* 見出しを少し大きく */
-    margin-bottom: 2rem;
-    color: #222;
-}
-
-.gallery-grid {
-    display: grid;
-    /* 最小250px、最大1frの列を自動調整 */
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: minmax(100px, auto); /* 各行の最小の高さを設定 */
-    gap: 1rem; /* アイテム間の隙間 */
-}
-
-.gallery-item {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-    break-inside: avoid; /* Print時にアイテムが途中で分割されないように */
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto; /* 高さを自動調整 */
-    display: block;
-    object-fit: cover; /* 画像がコンテナに合わせてトリミングされる */
-}
-
-.item-info {
-    padding: 1rem;
-    font-weight: bold;
-    text-align: center;
-    font-size: 0.9rem; /* 少し小さく */
-    color: #666;
-}
-
-/* グリッドレイアウトのサイズ調整 */
-.gallery-item.large {
-    grid-row: span 2; /* 2行にまたがる */
-}
-
-.gallery-item.wide {
-    grid-column: span 2; /* 2列にまたがる */
-}
-
-
-/* フッター */
-footer {
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem; /* 上部との間隔を広げる */
-    background-color: #222; /* より濃い背景色 */
-    color: #eee; /* 薄い文字色 */
-    font-size: 0.9rem;
 }
