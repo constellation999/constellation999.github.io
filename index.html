@@ -1,78 +1,64 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>グスタフ・クリムト</title>
-  <meta name="description" content="グスタフ・クリムト（1862-1918）はオーストリアの画家で、ウィーン分離派の中心人物。代表作には『接吻』や『ユディト I』などがある。">
-  <meta name="keywords" content="グスタフ・クリムト, Gustav Klimt, 絵画, ウィーン分離派, 接吻, アール・ヌーヴォー">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    .container {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    .image {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .image img {
-      max-width: 100%;
-      border-radius: 8px;
-    }
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-      margin-top: 30px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gustav Klimt</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>グスタフ・クリムト</h1>
-    <p>Gustav Klimt (1862-1918)</p>
-  </header>
+    <header>
+        <div class="header-content">
+            <h1>Gustav Klimt</h1>
+            <nav>
+                <ul>
+                    <li><a href="#overview">Overview</a></li>
+                    <li><a href="#gallery">Artworks</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="container">
-    <div class="image">
-      <!-- ここに自分の画像URLを差し替えてください -->
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Gustav_Klimt_1908.jpg" alt="グスタフ・クリムト">
-    </div>
+    <main>
+        <section id="overview" class="hero">
+            <div class="hero-image">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Gustav_Klimt_1.jpg/800px-Gustav_Klimt_1.jpg" alt="Portrait of Gustav Klimt">
+            </div>
+            <div class="hero-text">
+                <h2>グスタフ・クリムト</h2>
+                <p>1862–1918</p>
+                <p>オーストリアの象徴主義の画家。ウィーン分離派の創設者の一員であり、彼の作品は官能的なテーマ、金箔を多用した豪華な装飾性が特徴です。「接吻」は彼の最も有名な作品の一つです。</p>
+            </div>
+        </section>
 
-    <h2>概要</h2>
-    <p>
-      グスタフ・クリムトは19世紀末から20世紀初頭にかけて活躍したオーストリアの画家であり、ウィーン分離派の中心人物の一人です。
-      アール・ヌーヴォーの装飾的スタイルを特徴とし、黄金の色彩や官能的な人物描写で知られています。
-      代表作には『接吻』（1907-1908）や『ユディト I』（1901）などがあります。
-    </p>
+        <section id="gallery">
+            <h2>Artworks</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg/800px-The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg" alt="The Kiss">
+                    <div class="item-info">The Kiss (1907–1908)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Gustav_Klimt_016.jpg/800px-Gustav_Klimt_016.jpg" alt="Portrait of Adele Bloch-Bauer I">
+                    <div class="item-info">Portrait of Adele Bloch-Bauer I (1907)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Gustav_Klimt_-_The_Three_Ages_of_Woman_-_Google_Art_Project.jpg/800px-Gustav_Klimt_-_The_Three_Ages_of_Woman_-_Google_Art_Project.jpg" alt="The Three Ages of Woman">
+                    <div class="item-info">The Three Ages of Woman (1905)</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Gustav_Klimt_-_%C3%84pfelbaum_I.jpeg/800px-Gustav_Klimt_-_%C3%84pfelbaum_I.jpeg" alt="Apple Tree I">
+                    <div class="item-info">Apple Tree I (1912)</div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <h2>関連タグ</h2>
-    <ul>
-      <li>ウィーン分離派</li>
-      <li>アール・ヌーヴォー</li>
-      <li>象徴主義</li>
-      <li>装飾美術</li>
-    </ul>
-  </div>
+    <footer id="about">
+        <p>&copy; 2025 Your Website. Created as a tribute to Gustav Klimt.</p>
+    </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
