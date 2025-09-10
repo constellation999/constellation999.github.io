@@ -1,67 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Art Gallery</title>
+  <title>グスタフ・クリムト</title>
+  <meta name="description" content="グスタフ・クリムト（1862-1918）はオーストリアの画家で、ウィーン分離派の中心人物。代表作には『接吻』や『ユディト I』などがある。">
+  <meta name="keywords" content="グスタフ・クリムト, Gustav Klimt, 絵画, ウィーン分離派, 接吻, アール・ヌーヴォー">
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: sans-serif;
-      background: #111;
-      color: white;
-      overflow-x: hidden;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
     }
-
-    h1 {
+    header {
+      background: #222;
+      color: #fff;
       padding: 20px;
+      text-align: center;
     }
-
-    .gallery-wrapper {
-      overflow-x: auto;
-      white-space: nowrap;
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    .container {
+      max-width: 900px;
+      margin: 20px auto;
       padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
-
-    .gallery {
-      display: grid;
-      grid-auto-flow: column; /* 横に並べる */
-      grid-auto-columns: masonry; /* ブラウザによって無視されるが横流しを維持 */
-      grid-template-rows: repeat(3, 200px); /* 高さを一定に揃える（3段） */
-      gap: 0; /* 隙間なし */
+    .image {
+      text-align: center;
+      margin-bottom: 20px;
     }
-
-    .gallery img {
-      width: auto;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 0; /* 四角 */
-      display: block;
+    .image img {
+      max-width: 100%;
+      border-radius: 8px;
     }
-
-    /* スクロールバーを目立たなくする */
-    .gallery-wrapper::-webkit-scrollbar {
-      height: 8px;
-    }
-    .gallery-wrapper::-webkit-scrollbar-thumb {
-      background: #444;
+    h2 {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
+      margin-top: 30px;
     }
   </style>
 </head>
 <body>
-  <h1>Art Gallery</h1>
-  <div class="gallery-wrapper">
-    <div class="gallery">
-      <img src="1757402113917.jpg" alt="Art 1">
-      <img src="250827_2302_002 (1).jpg" alt="Art 2">
-      <img src="250827_2302_006.jpg" alt="Art 3">
-      <img src="PXL_20240629_051554399 (3).jpg" alt="Art 4">
-      <img src="img/art5.jpg" alt="Art 5">
-      <img src="img/art6.jpg" alt="Art 6">
-      <img src="img/art7.jpg" alt="Art 7">
-      <img src="img/art8.jpg" alt="Art 8">
-      <img src="img/art9.jpg" alt="Art 9">
+  <header>
+    <h1>グスタフ・クリムト</h1>
+    <p>Gustav Klimt (1862-1918)</p>
+  </header>
+
+  <div class="container">
+    <div class="image">
+      <!-- ここに自分の画像URLを差し替えてください -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Gustav_Klimt_1908.jpg" alt="グスタフ・クリムト">
     </div>
+
+    <h2>概要</h2>
+    <p>
+      グスタフ・クリムトは19世紀末から20世紀初頭にかけて活躍したオーストリアの画家であり、ウィーン分離派の中心人物の一人です。
+      アール・ヌーヴォーの装飾的スタイルを特徴とし、黄金の色彩や官能的な人物描写で知られています。
+      代表作には『接吻』（1907-1908）や『ユディト I』（1901）などがあります。
+    </p>
+
+    <h2>関連タグ</h2>
+    <ul>
+      <li>ウィーン分離派</li>
+      <li>アール・ヌーヴォー</li>
+      <li>象徴主義</li>
+      <li>装飾美術</li>
+    </ul>
   </div>
 </body>
 </html>
