@@ -1,0 +1,147 @@
+/* 基本的なスタイルリセットとページ全体のフォント設定 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header nav li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+header nav a {
+    color: #555;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #000;
+}
+
+/* メインコンテンツ */
+main {
+    padding-top: 80px; /* ヘッダーの高さ分を確保 */
+}
+
+/* ヒーローセクション */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 4rem 2rem;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.hero-image {
+    flex-basis: 40%;
+}
+
+.hero-image img {
+    max-width: 100%;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.hero-text {
+    flex-basis: 60%;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-top: 0;
+}
+
+/* 作品ギャラリー */
+#gallery {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#gallery h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* 画像がコンテナに合わせてトリミングされる */
+    display: block;
+}
+
+.item-info {
+    padding: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: #333;
+    color: #fff;
+}
