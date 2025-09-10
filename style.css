@@ -91,7 +91,7 @@ main {
     align-items: center;
     height: 100%;
     width: 40%; /* ★★★ 幅を40%に戻す ★★★ */
-    padding: 2rem 4rem 2rem 2rem; /* ★★★ 左の余白を半分に ★★★ */
+    padding: 2rem 12rem 2rem 2rem; /* ★★★ 左の余白を半分に ★★★ */
     box-sizing: border-box;
     text-align: center;
 }
